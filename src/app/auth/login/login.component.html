@@ -1,0 +1,11 @@
+<div class="container">
+<img class="logo" src="assets/img/logo2.png " alt="Logo If Learn">
+  <h1>BEM VINDO AO IFLEARN!</h1>
+  <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()"  >
+    <input name="email" type="email" formControlName="email" placeholder="E-mail">
+    <input type="password" formControlName="password" placeholder="Senha">
+    <button class="button-primary">Acessar</button>
+    <p>Esqueceu sua senha?</p>
+  </form>
+  <a routerLink="/signup">Criar nova conta</a>
+</div>

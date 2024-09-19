@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: hsl(0, 0%, 30%) ;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #A7BEAE;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+input, select {
+ background-color: hsl(0, 0%, 91%);
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+ border: 1px solid hsl(0, 0%, 91%);
+ padding: 5px 10px;
+ transition: 0.5s;
+ color: hsl(0, 0%, 30%);
+
+ &::placeholder {
+    font-size: 14px;
+    color: hsl(0, 0%, 40%);
+
+ }
+
+
+
+ &:hover {
+  background-color: hsl(0, 0%, 88%);
+  transition: 0.50s;
+ }
+
+ &:focus {
+  border-color:  hsl(0, 0%, 80%);
+ }
+}
+
+.button-primary {
+  border: none;
+  background-color: hsl(138, 15%, 70%);
+  color: #f9f9f9;
+  width: 100%;
+  padding: 8px 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+
+  &:hover {
+    background-color: hsl(138, 15%, 65%);
+    transition: 0.5s;
+  }
+
+  &:disabled {
+    background-color: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 50%);
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+select {
+  color: hsl(0, 0%, 40%);
+
+ }
+
+ h1 {
+  font-weight: 600;
+  letter-spacing: 2px;
+ }

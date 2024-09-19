@@ -1,0 +1,18 @@
+<div class="container">
+  <img class="logo" src="assets/img/logo2.png " alt="Logo If Learn">
+    <h1>CRIAR NOVA CONTA</h1>
+    <form class="form-group" [formGroup]="signupForm" (ngSubmit)="onSubmit()"  >
+      <input type="text" formControlName="nome" placeholder="Nome completo">
+      <input name="email" type="email" formControlName="email" placeholder="E-mail">
+      <input type="password" formControlName="senha" placeholder="Senha">
+      <select formControlName="turma" >
+        <option value="">Selecione sua turma</option>
+        <option value="1i">1i</option>
+        <option value="2i">2i</option>
+        <option value="3i">3i</option>
+      </select>
+
+      <button [disabled]="!this.signupForm.valid" class="button-primary">Cadastrar</button>
+      <p routerLink="/login">Cancelar</p>
+    </form>
+  </div>
