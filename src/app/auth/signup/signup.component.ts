@@ -24,7 +24,7 @@ export class SignupComponent {
       nome: ['', [Validators.required, Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
       senha: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(15)]],
-      categoria: [1, [Validators.required]],
+      categoria: ['', [Validators.required]],
       turma: ['', [Validators.required]]
     })
   }

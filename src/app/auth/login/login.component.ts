@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -11,25 +11,31 @@ import { AuthService } from '../auth.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
   authService  =  inject(AuthService);
   router  =  inject(Router);
+  private fb = inject(FormBuilder)
 
-  protected loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required])
-  })
+  protected loginForm!: FormGroup;
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
+      senha: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(15)]],
+    })
+  }
 
 
   onSubmit(){
     if(this.loginForm.valid) {
       console.log(this.loginForm.value);
-      // this.authService.login(this.loginForm.value)
-      // .subscribe((data: any) => {
-      //   if(this.authService.isLoggedIn()){
-      //     this.router.navigate(['/admin']);
-      //   }
-      //   console.log(data);
-      // });
+      this.authService.login(this.loginForm.value)
+      .subscribe((data: any) => {
+        // if(this.authService.isLoggedIn()){
+        //   this.router.navigate(['/home']);
+        // }
+        console.log(data);
+      });
     }
   }
 }
